@@ -2,7 +2,7 @@
 
         #include <arm_neon.h>
         #include <string.h>
-        #include "tinycv_c.h"
+        #include "my_tinycv_c.h"
 #if defined(__aarch64__)
 static inline uint32x4x4_t zip_u32_u16(uint8x16x2_t rotate0, uint8x16x2_t rotate1) {
     uint16x8_t rotate0_16 = vreinterpretq_u16_u8(rotate0.val[0]);
