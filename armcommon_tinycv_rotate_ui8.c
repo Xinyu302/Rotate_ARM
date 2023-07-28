@@ -66,7 +66,7 @@ static void rotate_clockwise_u8_16x16(uint8_t* sptr, uint8_t* dptr, size_t ih, s
     uint8x16x2_t rotate2 = vzipq_u8(srcB, srcA);
     uint8x16x2_t rotate1 = vzipq_u8(srcD, srcC); 
     uint8x16x2_t rotate0 = vzipq_u8(srcF, srcE);  
-    
+
     uint32x4x4_t dstA = zip_u32_u16(rotate0, rotate1);
     uint32x4x4_t dstB = zip_u32_u16(rotate2, rotate3);
     uint32x4x4_t dstC = zip_u32_u16(rotate4, rotate5);
