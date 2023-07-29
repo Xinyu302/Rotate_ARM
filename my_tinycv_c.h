@@ -28,7 +28,7 @@ typedef struct TinyMat {
  *
  */
 void armcommon_tinycv_rotate_ui8(const TinyMat* src, const TinyMat* dst, bool clockwise);
-
+void armcommon_tinycv_rotate_fp16(const TinyMat* src, const TinyMat* dst, bool clockwise);
 
 #ifdef __cplusplus
 }

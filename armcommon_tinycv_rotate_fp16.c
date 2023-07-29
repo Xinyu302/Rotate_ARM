@@ -152,25 +152,9 @@ static void rotate_clockwise_fp16x3_8x8(float16_t* sptr, float16_t* dptr, size_t
         a5.val[idx] = vreinterpretq_f16_f64(dst21);
         a6.val[idx] = vreinterpretq_f16_f64(dst30);
         a7.val[idx] = vreinterpretq_f16_f64(dst31);
-        
-        // ans0.val[idx] = dst00;
-        // ans1.val[idx] = dst01;
-        // ans2.val[idx] = dst10;
-        // ans3.val[idx] = dst11;
-        // ans4.val[idx] = dst20;
-        // ans5.val[idx] = dst21;
-        // ans6.val[idx] = dst30;
-        // ans7.val[idx] = dst31;
     }
     float16_t* dst = dptr + iw * H*3 + (H - ih - 8)*3;
-    // vst3q_f64((float64_t *)(dst + 0  * H), ans0);
-    // vst3q_f64((float64_t *)(dst + 3  * H), ans1);
-    // vst3q_f64((float64_t *)(dst + 6  * H), ans2);
-    // vst3q_f64((float64_t *)(dst + 9  * H), ans3);
-    // vst3q_f64((float64_t *)(dst + 12 * H), ans4);
-    // vst3q_f64((float64_t *)(dst + 15 * H), ans5);
-    // vst3q_f64((float64_t *)(dst + 18 * H), ans6);
-    // vst3q_f64((float64_t *)(dst + 21 * H), ans7);
+
     vst3q_f16((float16_t *)(dst + 0  * H), a0);
     vst3q_f16((float16_t *)(dst + 3  * H), a1);
     vst3q_f16((float16_t *)(dst + 6  * H), a2);
@@ -234,8 +218,6 @@ static void rotate_countclockwise_fp16x3_8x8(float16_t* sptr, float16_t* dptr, s
     vst3q_f16((float16_t *)(dst + 18 * H), a1);
     vst3q_f16((float16_t *)(dst + 21 * H), a0); 
 }
-
-#else
 
 #endif
         static void rotate_pixel(float16_t* sptr, float16_t* dptr, size_t ih, size_t iw, size_t IH, size_t IW, size_t C, bool clockwise){
