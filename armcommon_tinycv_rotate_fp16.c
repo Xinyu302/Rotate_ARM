@@ -44,7 +44,7 @@ static void rotate_clockwise_fp16_8x8(float16_t* sptr, float16_t* dptr, size_t i
     float64x2_t dst01 = vzip2q_f64(dstA.val[0], dstB.val[0]);
 
     float64x2_t dst10 = vzip1q_f64(dstA.val[1], dstB.val[1]);
-    float64x2_t dst11 = vzip1q_f64(dstA.val[1], dstB.val[1]);
+    float64x2_t dst11 = vzip2q_f64(dstA.val[1], dstB.val[1]);
 
     float64x2_t dst20 = vzip1q_f64(dstA.val[2], dstB.val[2]);
     float64x2_t dst21 = vzip2q_f64(dstA.val[2], dstB.val[2]);
@@ -89,7 +89,7 @@ static void rotate_countclockwise_fp16_8x8(float16_t* sptr, float16_t* dptr, siz
     float64x2_t dst01 = vzip2q_f64(dstA.val[0], dstB.val[0]);
 
     float64x2_t dst10 = vzip1q_f64(dstA.val[1], dstB.val[1]);
-    float64x2_t dst11 = vzip1q_f64(dstA.val[1], dstB.val[1]);
+    float64x2_t dst11 = vzip2q_f64(dstA.val[1], dstB.val[1]);
 
     float64x2_t dst20 = vzip1q_f64(dstA.val[2], dstB.val[2]);
     float64x2_t dst21 = vzip2q_f64(dstA.val[2], dstB.val[2]);
@@ -137,7 +137,7 @@ static void rotate_clockwise_fp16x3_8x8(float16_t* sptr, float16_t* dptr, size_t
         float64x2_t dst01 = vzip2q_f64(dstA.val[0], dstB.val[0]);
 
         float64x2_t dst10 = vzip1q_f64(dstA.val[1], dstB.val[1]);
-        float64x2_t dst11 = vzip1q_f64(dstA.val[1], dstB.val[1]);
+        float64x2_t dst11 = vzip2q_f64(dstA.val[1], dstB.val[1]);
 
         float64x2_t dst20 = vzip1q_f64(dstA.val[2], dstB.val[2]);
         float64x2_t dst21 = vzip2q_f64(dstA.val[2], dstB.val[2]);
@@ -191,7 +191,7 @@ static void rotate_countclockwise_fp16x3_8x8(float16_t* sptr, float16_t* dptr, s
         float64x2_t dst01 = vzip2q_f64(dstA.val[0], dstB.val[0]);
 
         float64x2_t dst10 = vzip1q_f64(dstA.val[1], dstB.val[1]);
-        float64x2_t dst11 = vzip1q_f64(dstA.val[1], dstB.val[1]);
+        float64x2_t dst11 = vzip2q_f64(dstA.val[1], dstB.val[1]);
 
         float64x2_t dst20 = vzip1q_f64(dstA.val[2], dstB.val[2]);
         float64x2_t dst21 = vzip2q_f64(dstA.val[2], dstB.val[2]);
