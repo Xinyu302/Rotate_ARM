@@ -33,15 +33,15 @@ void init_mat(const TinyMat *mat) {
 }
 
 int main() {
-    int rows = 9;
-    int cols = 9;
-    int channels = 3;
+    int rows = 19;
+    int cols = 19;
+    int channels = 1;
     dtype* data = malloc(rows * cols * channels * sizeof(dtype));
     dtype* dst_data = malloc(rows * cols * channels * sizeof(dtype));
     TinyMat mat = {rows, cols, /*channels*/ channels, data};
-    TinyMat dst = {rows, cols, /*channels*/ channels, dst_data};
+    TinyMat dst = {cols, rows, /*channels*/ channels, dst_data};
     init_mat(&mat);
-    armcommon_tinycv_rotate_fp16(&mat, &dst, false);
+    armcommon_tinycv_rotate_fp16(&mat, &dst, true);
     printMat(&mat);
     printMat(&dst);
     return 0;
